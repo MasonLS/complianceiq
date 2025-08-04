@@ -219,7 +219,7 @@ export function ComplianceDemo() {
       <div className="p-6">
         {step === 1 && (
           <div>
-            <h3 className="text-xl font-semibold mb-4">What type of business do you run?</h3>
+            <h3 className="text-xl font-semibold mb-4 text-gray-800">What type of business do you run?</h3>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
               {businessTypes.map((type) => (
                 <button
@@ -239,7 +239,7 @@ export function ComplianceDemo() {
 
         {step === 2 && (
           <div>
-            <h3 className="text-xl font-semibold mb-4">How many employees do you have?</h3>
+            <h3 className="text-xl font-semibold mb-4 text-gray-800">How many employees do you have?</h3>
             <div className="grid grid-cols-2 gap-3">
               {companySizes.map((size) => (
                 <button
@@ -259,7 +259,7 @@ export function ComplianceDemo() {
 
         {step === 3 && (
           <div>
-            <h3 className="text-xl font-semibold mb-4">What state is your business located in?</h3>
+            <h3 className="text-xl font-semibold mb-4 text-gray-800">What state is your business located in?</h3>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-6">
               {states.map((state) => (
                 <button
@@ -291,7 +291,7 @@ export function ComplianceDemo() {
         {step === 4 && showResults && (
           <div>
             <div className="mb-6">
-              <h3 className="text-xl font-semibold mb-2">Your Personalized Compliance Dashboard</h3>
+              <h3 className="text-xl font-semibold mb-2 text-gray-800">Your Personalized Compliance Dashboard</h3>
               <p className="text-gray-900">
                 Based on your {businessInfo.type} business with {businessInfo.size} in {businessInfo.state}
               </p>
