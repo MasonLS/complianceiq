@@ -207,7 +207,7 @@ export default function Home() {
             <Shield className="h-6 w-6" />
             <span className="text-lg font-semibold">ComplianceIQ</span>
           </div>
-          <p className="text-gray-400">
+          <p className="text-gray-900">
             Your AI Compliance Copilot for Small Business
           </p>
         </div>
