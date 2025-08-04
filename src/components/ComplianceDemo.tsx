@@ -176,7 +176,7 @@ export function ComplianceDemo() {
       case 'high': return 'text-red-600 bg-red-50 border-red-200'
       case 'medium': return 'text-yellow-600 bg-yellow-50 border-yellow-200'
       case 'low': return 'text-green-600 bg-green-50 border-green-200'
-      default: return 'text-gray-600 bg-gray-50 border-gray-200'
+      default: return 'text-gray-900 bg-gray-50 border-gray-200'
     }
   }
 
@@ -194,22 +194,22 @@ export function ComplianceDemo() {
       {/* Progress Bar */}
       <div className="bg-gray-50 px-6 py-4">
         <div className="flex items-center justify-between text-sm">
-          <div className={`flex items-center ${step >= 1 ? 'text-blue-600' : 'text-gray-400'}`}>
+          <div className={`flex items-center ${step >= 1 ? 'text-blue-600' : 'text-gray-800'}`}>
             <Building className="h-4 w-4 mr-1" />
             Business Type
           </div>
-          <ChevronRight className="h-4 w-4 text-gray-400" />
-          <div className={`flex items-center ${step >= 2 ? 'text-blue-600' : 'text-gray-400'}`}>
+          <ChevronRight className="h-4 w-4 text-gray-800" />
+          <div className={`flex items-center ${step >= 2 ? 'text-blue-600' : 'text-gray-800'}`}>
             <Users className="h-4 w-4 mr-1" />
             Company Size
           </div>
-          <ChevronRight className="h-4 w-4 text-gray-400" />
-          <div className={`flex items-center ${step >= 3 ? 'text-blue-600' : 'text-gray-400'}`}>
+          <ChevronRight className="h-4 w-4 text-gray-800" />
+          <div className={`flex items-center ${step >= 3 ? 'text-blue-600' : 'text-gray-800'}`}>
             <MapPin className="h-4 w-4 mr-1" />
             Location
           </div>
-          <ChevronRight className="h-4 w-4 text-gray-400" />
-          <div className={`flex items-center ${step >= 4 ? 'text-blue-600' : 'text-gray-400'}`}>
+          <ChevronRight className="h-4 w-4 text-gray-800" />
+          <div className={`flex items-center ${step >= 4 ? 'text-blue-600' : 'text-gray-800'}`}>
             <CheckCircle className="h-4 w-4 mr-1" />
             Results
           </div>
@@ -228,7 +228,7 @@ export function ComplianceDemo() {
                     handleBusinessInfoChange('type', type)
                     setStep(2)
                   }}
-                  className="p-3 text-left border border-gray-200 rounded-lg hover:border-blue-300 hover:bg-blue-50 transition-colors"
+                  className="p-3 text-left border border-gray-200 rounded-lg hover:border-blue-300 hover:bg-blue-50 transition-colors text-gray-900 font-medium"
                 >
                   {type}
                 </button>
@@ -248,7 +248,7 @@ export function ComplianceDemo() {
                     handleBusinessInfoChange('size', size)
                     setStep(3)
                   }}
-                  className="p-3 text-left border border-gray-200 rounded-lg hover:border-blue-300 hover:bg-blue-50 transition-colors"
+                  className="p-3 text-left border border-gray-200 rounded-lg hover:border-blue-300 hover:bg-blue-50 transition-colors text-gray-900 font-medium"
                 >
                   {size}
                 </button>
@@ -270,7 +270,7 @@ export function ComplianceDemo() {
                   className={`p-3 text-left border rounded-lg transition-colors ${
                     businessInfo.state === state 
                       ? 'border-blue-300 bg-blue-50 text-blue-700' 
-                      : 'border-gray-200 hover:border-blue-300 hover:bg-blue-50'
+                      : 'border-gray-200 hover:border-blue-300 hover:bg-blue-50 text-gray-900 font-medium'
                   }`}
                 >
                   {state}
@@ -292,7 +292,7 @@ export function ComplianceDemo() {
           <div>
             <div className="mb-6">
               <h3 className="text-xl font-semibold mb-2">Your Personalized Compliance Dashboard</h3>
-              <p className="text-gray-600">
+              <p className="text-gray-900">
                 Based on your {businessInfo.type} business with {businessInfo.size} in {businessInfo.state}
               </p>
             </div>
@@ -317,7 +317,7 @@ export function ComplianceDemo() {
                     <ul className="text-sm space-y-1">
                       {item.actionItems.map((action, index) => (
                         <li key={index} className="flex items-start space-x-2">
-                          <span className="text-gray-400 mt-1">•</span>
+                          <span className="text-gray-800 mt-1">•</span>
                           <span>{action}</span>
                         </li>
                       ))}

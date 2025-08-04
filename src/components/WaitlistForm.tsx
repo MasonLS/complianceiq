@@ -73,7 +73,7 @@ export function WaitlistForm() {
       <div className="max-w-md mx-auto bg-white rounded-lg p-6 text-center">
         <CheckCircle className="h-12 w-12 text-green-500 mx-auto mb-4" />
         <h3 className="text-xl font-semibold text-gray-900 mb-2">You&apos;re on the list!</h3>
-        <p className="text-gray-600 mb-4">
+        <p className="text-gray-900 mb-4">
           Thanks for joining our waitlist. We&apos;ll notify you as soon as ComplianceIQ is ready, 
           and you&apos;ll get 50% off your first year!
         </p>
@@ -88,7 +88,7 @@ export function WaitlistForm() {
     <div className="max-w-md mx-auto bg-white rounded-lg p-6">
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+          <label htmlFor="email" className="block text-sm font-medium text-gray-900 mb-1">
             Email Address *
           </label>
           <input
@@ -98,13 +98,13 @@ export function WaitlistForm() {
             required
             value={formData.email}
             onChange={handleInputChange}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 placeholder-gray-600"
             placeholder="you@company.com"
           />
         </div>
 
         <div>
-          <label htmlFor="company_name" className="block text-sm font-medium text-gray-700 mb-1">
+          <label htmlFor="company_name" className="block text-sm font-medium text-gray-900 mb-1">
             Company Name
           </label>
           <input
@@ -113,13 +113,13 @@ export function WaitlistForm() {
             name="company_name"
             value={formData.company_name}
             onChange={handleInputChange}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 placeholder-gray-600"
             placeholder="Your Company Inc."
           />
         </div>
 
         <div>
-          <label htmlFor="business_type" className="block text-sm font-medium text-gray-700 mb-1">
+          <label htmlFor="business_type" className="block text-sm font-medium text-gray-900 mb-1">
             Business Type
           </label>
           <select
@@ -127,7 +127,7 @@ export function WaitlistForm() {
             name="business_type"
             value={formData.business_type}
             onChange={handleInputChange}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 placeholder-gray-600"
           >
             <option value="">Select business type</option>
             {businessTypes.map((type) => (
@@ -137,7 +137,7 @@ export function WaitlistForm() {
         </div>
 
         <div>
-          <label htmlFor="company_size" className="block text-sm font-medium text-gray-700 mb-1">
+          <label htmlFor="company_size" className="block text-sm font-medium text-gray-900 mb-1">
             Company Size
           </label>
           <select
@@ -145,7 +145,7 @@ export function WaitlistForm() {
             name="company_size"
             value={formData.company_size}
             onChange={handleInputChange}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 placeholder-gray-600"
           >
             <option value="">Select company size</option>
             {companySizes.map((size) => (
@@ -155,7 +155,7 @@ export function WaitlistForm() {
         </div>
 
         <div>
-          <label htmlFor="current_compliance_challenges" className="block text-sm font-medium text-gray-700 mb-1">
+          <label htmlFor="current_compliance_challenges" className="block text-sm font-medium text-gray-900 mb-1">
             Current Compliance Challenges
           </label>
           <textarea
@@ -164,7 +164,7 @@ export function WaitlistForm() {
             rows={3}
             value={formData.current_compliance_challenges}
             onChange={handleInputChange}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 placeholder-gray-600"
             placeholder="What compliance issues keep you up at night?"
           />
         </div>
