@@ -85,7 +85,7 @@ export default function Home() {
               <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Shield className="h-8 w-8 text-blue-600" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Smart Tracking</h3>
+              <h3 className="text-xl font-semibold mb-2 text-gray-900">Smart Tracking</h3>
               <p className="text-gray-600">
                 Automatically identifies which regulations apply to your specific business type, location, and size
               </p>
@@ -95,7 +95,7 @@ export default function Home() {
               <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <CheckCircle className="h-8 w-8 text-green-600" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Plain English</h3>
+              <h3 className="text-xl font-semibold mb-2 text-gray-900">Plain English</h3>
               <p className="text-gray-600">
                 Converts complex legal language into simple, actionable steps you can actually understand
               </p>
@@ -105,7 +105,7 @@ export default function Home() {
               <div className="bg-yellow-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <AlertTriangle className="h-8 w-8 text-yellow-600" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Proactive Alerts</h3>
+              <h3 className="text-xl font-semibold mb-2 text-gray-900">Proactive Alerts</h3>
               <p className="text-gray-600">
                 Get notified about upcoming deadlines and new requirements before they become problems
               </p>
@@ -115,7 +115,7 @@ export default function Home() {
               <div className="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Users className="h-8 w-8 text-purple-600" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Multi-State Support</h3>
+              <h3 className="text-xl font-semibold mb-2 text-gray-900">Multi-State Support</h3>
               <p className="text-gray-600">
                 Handles businesses operating across different states with varying compliance requirements
               </p>
@@ -125,7 +125,7 @@ export default function Home() {
               <div className="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Clock className="h-8 w-8 text-indigo-600" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Step-by-Step Guidance</h3>
+              <h3 className="text-xl font-semibold mb-2 text-gray-900">Step-by-Step Guidance</h3>
               <p className="text-gray-600">
                 Detailed checklists and workflows for every compliance task, no legal expertise required
               </p>
@@ -135,7 +135,7 @@ export default function Home() {
               <div className="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <DollarSign className="h-8 w-8 text-red-600" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Affordable Pricing</h3>
+              <h3 className="text-xl font-semibold mb-2 text-gray-900">Affordable Pricing</h3>
               <p className="text-gray-600">
                 Just $49/month - a fraction of the cost of legal consultations or enterprise software
               </p>
