@@ -26,7 +26,7 @@ const WaitlistForm = () => {
     setError('');
 
     try {
-      const { data, error } = await supabase
+      const { error } = await supabase
         .from('waitlist')
         .insert([
           {
@@ -55,10 +55,10 @@ const WaitlistForm = () => {
       <div className="bg-white rounded-lg shadow-lg p-8 max-w-md mx-auto text-center">
         <div className="text-6xl mb-4">🎉</div>
         <h3 className="text-2xl font-bold text-gray-900 mb-2">
-          You're on the list!
+          You&apos;re on the list!
         </h3>
         <p className="text-gray-600 mb-6">
-          We'll notify you as soon as ComplianceIQ is ready. In the meantime, we'll send you helpful compliance tips and updates.
+          We&apos;ll notify you as soon as ComplianceIQ is ready. In the meantime, we&apos;ll send you helpful compliance tips and updates.
         </p>
         <button
           onClick={() => setIsSubmitted(false)}

@@ -60,9 +60,9 @@ export function WaitlistForm() {
 
       console.log('Successfully added to waitlist:', result)
       setIsSubmitted(true)
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error('Error submitting to waitlist:', err)
-      setError(err.message || 'Something went wrong. Please try again.')
+      setError(err instanceof Error ? err.message : 'Something went wrong. Please try again.')
     } finally {
       setIsSubmitting(false)
     }
@@ -72,10 +72,10 @@ export function WaitlistForm() {
     return (
       <div className="max-w-md mx-auto bg-white rounded-lg p-6 text-center">
         <CheckCircle className="h-12 w-12 text-green-500 mx-auto mb-4" />
-        <h3 className="text-xl font-semibold text-gray-900 mb-2">You\'re on the list!</h3>
+        <h3 className="text-xl font-semibold text-gray-900 mb-2">You&apos;re on the list!</h3>
         <p className="text-gray-600 mb-4">
-          Thanks for joining our waitlist. We\'ll notify you as soon as ComplianceIQ is ready, 
-          and you\'ll get 50% off your first year!
+          Thanks for joining our waitlist. We&apos;ll notify you as soon as ComplianceIQ is ready, 
+          and you&apos;ll get 50% off your first year!
         </p>
         <p className="text-sm text-gray-500">
           Keep an eye on your inbox for updates and early access opportunities.

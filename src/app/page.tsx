@@ -159,7 +159,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="bg-white p-6 rounded-lg shadow-sm">
               <h3 className="font-semibold text-lg mb-2">Corporate Transparency Act</h3>
-              <p className="text-gray-600 text-sm">New beneficial ownership reporting requirements that many businesses don\'t know about</p>
+              <p className="text-gray-600 text-sm">New beneficial ownership reporting requirements that many businesses don&apos;t know about</p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-sm">
               <h3 className="font-semibold text-lg mb-2">FinCEN Reporting</h3>
