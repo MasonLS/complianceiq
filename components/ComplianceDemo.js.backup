@@ -54,50 +54,37 @@ const ComplianceDemo = () => {
     }
 
     // Payment platform reporting
-    if (businessInfo.revenue && !businessInfo.revenue.includes('Under')) {
+    if (businessInfo.revenue >= 600) {
       results.push({
-        regulation: '1099-K Payment Reporting',
+        regulation: '1099-K Reporting Changes',
         status: 'warning',
         deadline: '2025-01-31',
         description: 'New $600 threshold for payment platform reporting',
         penalty: 'IRS penalties for non-compliance',
-        action: 'Track payment platform transactions'
+        action: 'Track all payment platform transactions'
       });
     }
 
-    // Data privacy for tech companies
-    if (businessInfo.type === 'Technology/Software') {
-      results.push({
-        regulation: 'Data Privacy Compliance',
-        status: 'action_required',
-        deadline: 'Ongoing',
-        description: 'Implement privacy policies and data protection measures',
-        penalty: 'Up to $7,500 per violation',
-        action: 'Audit data collection practices'
-      });
-    }
-
-    // Healthcare specific
-    if (businessInfo.type === 'Healthcare') {
-      results.push({
-        regulation: 'HIPAA Compliance',
-        status: 'compliant',
-        deadline: 'Ongoing',
-        description: 'Maintain patient data security and privacy standards',
-        penalty: 'Up to $1.5M per incident',
-        action: 'Annual compliance review scheduled'
-      });
-    }
-
-    // Food service specific
+    // Industry-specific regulations
     if (businessInfo.type === 'Restaurant/Food Service') {
       results.push({
         regulation: 'Food Safety Modernization Act',
-        status: 'warning',
+        status: 'action_required',
         deadline: '2025-03-15',
-        description: 'Update food safety plans and employee training',
-        penalty: 'Fines + potential closure',
+        description: 'Update HACCP plans and employee training',
+        penalty: 'FDA fines up to $100,000',
         action: 'Schedule food safety audit'
+      });
+    }
+
+    if (businessInfo.type === 'Healthcare') {
+      results.push({
+        regulation: 'HIPAA Privacy Rule Updates',
+        status: 'compliant',
+        deadline: 'Ongoing',
+        description: 'Maintain patient data privacy and security',
+        penalty: 'Up to $1.5M per incident',
+        action: 'Conduct annual privacy assessment'
       });
     }
 
@@ -129,7 +116,7 @@ const ComplianceDemo = () => {
         <h3 className="text-2xl font-bold text-gray-900 mb-2">
           Try ComplianceIQ Demo
         </h3>
-        <p className="text-gray-700">
+        <p className="text-gray-600">
           See how we identify compliance requirements for your specific business
         </p>
       </div>
@@ -138,7 +125,7 @@ const ComplianceDemo = () => {
       <div className="mb-8">
         <div className="flex items-center justify-between mb-2">
           <span className="text-sm font-medium text-blue-600">Step {currentStep + 1} of 4</span>
-          <span className="text-sm text-gray-700">
+          <span className="text-sm text-gray-500">
             {currentStep === 0 && 'Business Type'}
             {currentStep === 1 && 'Location & Size'}
             {currentStep === 2 && 'Revenue Info'}
@@ -149,7 +136,7 @@ const ComplianceDemo = () => {
           <div 
             className="bg-blue-600 h-2 rounded-full transition-all duration-300"
             style={{ width: `${((currentStep + 1) / 4) * 100}%` }}
-          />
+          ></div>
         </div>
       </div>
 
@@ -165,7 +152,7 @@ const ComplianceDemo = () => {
                   setBusinessInfo({...businessInfo, type});
                   setCurrentStep(1);
                 }}
-                className="p-3 text-left border border-gray-300 rounded-lg hover:border-blue-500 hover:bg-blue-50 transition-colors"
+                className="p-3 text-left border border-gray-200 rounded-lg hover:border-blue-500 hover:bg-blue-50 transition-colors"
               >
                 <div className="font-medium text-gray-900">{type}</div>
               </button>
@@ -180,37 +167,37 @@ const ComplianceDemo = () => {
           <h4 className="text-lg font-semibold text-gray-900">Tell us about your business size and location</h4>
           
           <div>
-            <label className="block text-sm font-medium text-gray-800 mb-2">
+            <label className="block text-sm font-medium text-gray-700 mb-2">
               Primary business state
             </label>
             <select
               value={businessInfo.state}
               onChange={(e) => setBusinessInfo({...businessInfo, state: e.target.value})}
-              className="w-full p-3 border border-gray-400 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-900 bg-white"
+              className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             >
-              <option value="" className="text-gray-600">Select a state</option>
+              <option value="">Select a state</option>
               {states.map((state) => (
-                <option key={state} value={state} className="text-gray-900">{state}</option>
+                <option key={state} value={state}>{state}</option>
               ))}
             </select>
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-800 mb-2">
+            <label className="block text-sm font-medium text-gray-700 mb-2">
               Number of employees
             </label>
             <select
               value={businessInfo.employees}
               onChange={(e) => setBusinessInfo({...businessInfo, employees: e.target.value})}
-              className="w-full p-3 border border-gray-400 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-900 bg-white"
+              className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             >
-              <option value="" className="text-gray-600">Select employee count</option>
-              <option value="1" className="text-gray-900">Just me (1)</option>
-              <option value="2-5" className="text-gray-900">2-5 employees</option>
-              <option value="6-10" className="text-gray-900">6-10 employees</option>
-              <option value="11-25" className="text-gray-900">11-25 employees</option>
-              <option value="26-50" className="text-gray-900">26-50 employees</option>
-              <option value="50+" className="text-gray-900">50+ employees</option>
+              <option value="">Select employee count</option>
+              <option value="1">Just me (1)</option>
+              <option value="2-5">2-5 employees</option>
+              <option value="6-10">6-10 employees</option>
+              <option value="11-25">11-25 employees</option>
+              <option value="26-50">26-50 employees</option>
+              <option value="50+">50+ employees</option>
             </select>
           </div>
 
@@ -244,7 +231,7 @@ const ComplianceDemo = () => {
                   setBusinessInfo({...businessInfo, revenue: range});
                   generateComplianceResults();
                 }}
-                className="p-4 text-left border border-gray-300 rounded-lg hover:border-blue-500 hover:bg-blue-50 transition-colors"
+                className="p-4 text-left border border-gray-200 rounded-lg hover:border-blue-500 hover:bg-blue-50 transition-colors"
               >
                 <div className="font-medium text-gray-900">{range}</div>
               </button>
@@ -260,14 +247,14 @@ const ComplianceDemo = () => {
             <h4 className="text-xl font-bold text-gray-900 mb-2">
               Your Personalized Compliance Report
             </h4>
-            <p className="text-gray-700">
+            <p className="text-gray-600">
               Based on your {businessInfo.type} business in {businessInfo.state} with {businessInfo.employees} employees
             </p>
           </div>
 
           <div className="space-y-4">
             {complianceResults.map((item, index) => (
-              <div key={index} className="border border-gray-300 rounded-lg p-4">
+              <div key={index} className="border border-gray-200 rounded-lg p-4">
                 <div className="flex items-start justify-between mb-3">
                   <div className="flex items-center space-x-2">
                     <span className="text-xl">{getStatusIcon(item.status)}</span>
@@ -278,19 +265,19 @@ const ComplianceDemo = () => {
                   </span>
                 </div>
                 
-                <p className="text-gray-700 mb-2">{item.description}</p>
+                <p className="text-gray-600 mb-2">{item.description}</p>
                 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
                   <div>
-                    <span className="font-medium text-gray-800">Deadline:</span>
-                    <div className="text-gray-700">{item.deadline}</div>
+                    <span className="font-medium text-gray-700">Deadline:</span>
+                    <div className="text-gray-600">{item.deadline}</div>
                   </div>
                   <div>
-                    <span className="font-medium text-gray-800">Potential Penalty:</span>
+                    <span className="font-medium text-gray-700">Potential Penalty:</span>
                     <div className="text-red-600">{item.penalty}</div>
                   </div>
                   <div>
-                    <span className="font-medium text-gray-800">Next Action:</span>
+                    <span className="font-medium text-gray-700">Next Action:</span>
                     <div className="text-blue-600">{item.action}</div>
                   </div>
                 </div>
@@ -302,26 +289,22 @@ const ComplianceDemo = () => {
             <h5 className="font-semibold text-blue-900 mb-2">
               🎯 This is just a preview!
             </h5>
-            <p className="text-blue-800 mb-3">
-              ComplianceIQ would provide real-time updates, automated reminders, and step-by-step guidance for each requirement.
+            <p className="text-blue-800 text-sm">
+              The full ComplianceIQ platform will provide real-time updates, automated deadline tracking, 
+              step-by-step compliance guides, and personalized alerts for your specific business.
             </p>
-            <button
-              onClick={() => {
-                setCurrentStep(0);
-                setBusinessInfo({ type: '', state: '', employees: '', revenue: '' });
-                setComplianceResults([]);
-              }}
-              className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors mr-3"
-            >
-              Try Again
-            </button>
-            <a
-              href="#waitlist"
-              className="bg-green-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-green-700 transition-colors inline-block"
-            >
-              Join Waitlist
-            </a>
           </div>
+
+          <button
+            onClick={() => {
+              setCurrentStep(0);
+              setBusinessInfo({ type: '', state: '', employees: '', revenue: '' });
+              setComplianceResults([]);
+            }}
+            className="w-full bg-gray-600 text-white py-3 px-6 rounded-lg font-medium hover:bg-gray-700 transition-colors"
+          >
+            Try Another Business Type
+          </button>
         </div>
       )}
     </div>
